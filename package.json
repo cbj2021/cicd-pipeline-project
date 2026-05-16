@@ -1,0 +1,19 @@
+{
+  "name": "cicd-pipeline-project",
+  "version": "1.0.0",
+  "description": "Portfolio CI/CD project with GitHub Actions, Docker, and Nginx",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest --forceExit",
+    "lint": "eslint src/"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3",
+    "eslint": "^8.57.0"
+  }
+}
