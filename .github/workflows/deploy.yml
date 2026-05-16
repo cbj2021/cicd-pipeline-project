@@ -61,6 +61,6 @@ jobs:
             docker run -d \
               --name my-app \
               --restart unless-stopped \
-              -p 3000:3000\
+              -p 3000:3000 \
               ${{ env.IMAGE_NAME }}:latest
             docker image prune -f
