@@ -1,3 +1,5 @@
+
+
 name: CI/CD Pipeline
 
 on:
@@ -64,17 +66,17 @@ jobs:
               -p 3000:3000 \
               ${{ env.IMAGE_NAME }}:latest
             docker image prune -f
-      - name: Notify Slack on success
-        if: success()
-        uses: slackapi/slack-github-action@v1.26.0
-        with:
-          payload: '{"text":"✅ Deployed `${{ github.sha }}` by @${{ github.actor }}"}'
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-      - name: Notify Slack on failure
-        if: failure()
-        uses: slackapi/slack-github-action@v1.26.0
-        with:
-          payload: '{"text":"❌ Deploy failed for `${{ github.sha }}` — <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View logs>"}'
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#      - name: Notify Slack on success
+#        if: success()
+#        uses: slackapi/slack-github-action@v1.26.0
+#        with:
+#          payload: '{"text":"✅ Deployed `${{ github.sha }}` by @${{ github.actor }}"}'
+#        env:
+#          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#      - name: Notify Slack on failure
+#        if: failure()
+#        uses: slackapi/slack-github-action@v1.26.0
+#        with:
+#          payload: '{"text":"❌ Deploy failed for `${{ github.sha }}` — <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View logs>"}'
+#        env:
+#          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
